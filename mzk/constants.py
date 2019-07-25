@@ -35,24 +35,23 @@ colors = {
 }
 
 intervals = {
-	'unison'           : {'semitones':0,  'short_name':'P1' },
-	'minor_second'     : {'semitones':1,  'short_name':'m2' },
-	'major_second'     : {'semitones':2,  'short_name':'M2' },
-	'minor_third'      : {'semitones':3,  'short_name':'m3' },
-	'major_third'      : {'semitones':4,  'short_name':'M3' },
-	'perfect_fourth'   : {'semitones':5,  'short_name':'P4' },
-	'augmented_fourth' : {'semitones':6,  'short_name':'+4' },
-	'diminished_fifth' : {'semitones':6,  'short_name':'d5' },
-	'perfect_fifth'    : {'semitones':7,  'short_name':'P5' },
-	'minor_sixth'      : {'semitones':8,  'short_name':'m6' },
-	'major_sixth'      : {'semitones':9,  'short_name':'M6' },
-	'minor_seventh'    : {'semitones':10, 'short_name':'m7' },
-	'major_seventh'    : {'semitones':11, 'short_name':'M7' },
-	'perfect_octave'   : {'semitones':12, 'short_name':'8va'}
+	'perfect_unison' : {'semitones':0,  'short_name':'P1'},
+	'minor_second'   : {'semitones':1,  'short_name':'m2'},
+	'major_second'   : {'semitones':2,  'short_name':'M2'},
+	'minor_third'    : {'semitones':3,  'short_name':'m3'},
+	'major_third'    : {'semitones':4,  'short_name':'M3'},
+	'perfect_fourth' : {'semitones':5,  'short_name':'P4'},
+	'tritone'        : {'semitones':6,  'short_name':'TT'}, # diminished fifth / augmented fourt
+	'perfect_fifth'  : {'semitones':7,  'short_name':'P5'},
+	'minor_sixth'    : {'semitones':8,  'short_name':'m6'},
+	'major_sixth'    : {'semitones':9,  'short_name':'M6'},
+	'minor_seventh'  : {'semitones':10, 'short_name':'m7'},
+	'major_seventh'  : {'semitones':11, 'short_name':'M7'},
+	'perfect_octave' : {'semitones':12, 'short_name':'P8'}
 }
 
-notes         = ('A', 'A#', 'B',   'C',  'C#', 'D',  'D#',  'E',    'F',  'F#', 'G',  'G#'     )
-numerals      = ('I', 'II', 'III', 'IV', 'V',  'VI', 'VII', 'VIII', 'IX', 'X',  'XI', 'XII'    )
+notes         = ('A', 'A#', 'B',   'C',  'C#', 'D',  'D#',  'E',    'F',  'F#', 'G',  'G#')
+numerals      = ('I', 'II', 'III', 'IV', 'V',  'VI', 'VII', 'VIII', 'IX', 'X',  'XI', 'XII')
 scale_degrees = ('tonic','supertonic','mediant','subdominant','dominant''submediant','subtonic')
 
 scales = {
