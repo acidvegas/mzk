@@ -46,7 +46,7 @@ compound_intervals = {
 	'major_thirteenth'   : {'semitones':21, 'short_name':'M13'},
 	'minor_fourteenth'   : {'semitones':22, 'short_name':'m14'},
 	'major_fourteenth'   : {'semitones':23, 'short_name':'M14'},
-	'double_octave'      : {'semitones':25, 'short_name':'15ma'}
+	'double_octave'      : {'semitones':24, 'short_name':'15ma'}
 }
 
 intervals = {
