@@ -87,7 +87,7 @@ def print_circle_of_fifths():
 	print(circle)
 	print(print_circle_of_fifths.__doc__)
 
-def help():
+def print_help():
 	print('usage: python mzk.py [OPTIONS]')
 	print('\noptions:')
 	print('--chord=KEY_TYPE │ print a TYPE chord in the key of KEY')
