@@ -12,7 +12,7 @@ def generate_notes(key):
 
 def generate_scale(string, scale_notes, full=False):
 	notes = generate_notes(string.upper())*2 if full else generate_notes(string.upper())
-	notes.append(notes[0]) # add root note to the end
+	notes.append(notes[0])
 	for index,note in enumerate(notes):
 		if note in scale_notes:
 			notes[index] = notes[index].center(5, '-')
@@ -32,7 +32,7 @@ def scale(type, key):
 	last = 0
 	notes = generate_notes(key)
 	scale_notes = [notes[0],]
-	for step in scales[type]:
+	for step in constants.scales[type]:
 		last += int(step)
 		if last >= len(notes):
 			last -= len(notes)
@@ -57,8 +57,7 @@ def print_chord():
 E   A   D   G   B   e''')
 
 def print_circle_of_fifths():
-	'''
-		definition:
+	'''definition:
 			the relationship among the 12 tones of the chromatic scale, their corresponding key signatures, & the associated major/minor keys
 
 		accidentals:
@@ -77,8 +76,7 @@ def print_circle_of_fifths():
 			minor     sixth
 			minor     third
 			minor     seventh
-			perfect   fourth
-	'''
+			perfect   fourth'''
 	circle = constants.circle.replace('\n',' \n') + ' ' # todo: fix this
 	for note in ('major','C','F','B♭','E♭','A♭','D♭','C♯','G♭/F♯','B','C♭','E','A','D','G'): # todo: reverse
 		circle = circle.replace(f' {note} ', f' \033[91m{note}\033[0m ')
@@ -87,16 +85,15 @@ def print_circle_of_fifths():
 	for note in ('minor','a','d','g','c','f','b♭','e♭/d♯','g♯','c♯','f♯','b','c'):
 		circle = circle.replace(f' {note} ', f' \033[92m{note}\033[0m ')
 	print(circle)
-	#print(print_circle_of_fifths.__doc__)
+	print(print_circle_of_fifths.__doc__)
 
 def print_intervals():
-	'''
-	definition:
+	'''definition:
 		the distance between two notes or pitches
 
 	note:
-		semitone - half step
-		tone     - whole step (b to c & e to f is a tone)
+		semitone - half step (b/c & e/f is a half step)
+		tone     - whole step
 
 	types:
 		harmonic interval - notes played simultaneously
@@ -110,8 +107,7 @@ def print_intervals():
 		major/minor - 2nds, 3rds, 6ths, 7ths
 		perfect     - 4ths, 5ths, octaves
 		diminished  - minor/perfect - 1 semitone
-		augmented   - major/perfect + 1 semitone
-	'''
+		augmented   - major/perfect + 1 semitone'''
 	print('            I N T E R V A L S           ')
 	print('┌───────────┬──────────────────┬───────┐')
 	print('│ semitones │ quality          │ short │')
@@ -119,7 +115,7 @@ def print_intervals():
 	for interval, info in constants.intervals.items():
 		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(16), info['short_name'].ljust(5)))
 	print('└───────────┴──────────────────┴───────┘')
-	#print(print_intervals.__doc__)
+	print(print_intervals.__doc__)
 
 def print_scale(root, type, full=False):
 	frets = (24,147) if full else (12,75)
@@ -132,22 +128,23 @@ def print_scale(root, type, full=False):
 		string_notes = generate_scale(string, scale_notes, full)
 		print(string + ' │' + '│'.join(note.center(5, '-') for note in string_notes[1:]) + '│')
 	print('  └' + '┴'.join('─'*5 for x in range(frets[0])) + '┘')
-	print((', '.join(scale_notes) + ' / ' + get_pattern(scales[type])).rjust(frets[1]))
+	print((', '.join(scale_notes) + ' / ' + get_pattern(constants.scales[type])).rjust(frets[1]))
 
 def print_scales():
-	'''
-	definition:
+	'''definition:
 		any set of musical notes ordered by fundamental frequency or pitch
 
 	note:
 		1 - half step
 		2 - whole step
 		3 - whole step half step'''
-	print('               S C A L E S               ')
+	print('S C A L E S'.center(43))
 	print('┌───────────────────────┬─────────────────┐')
 	print('│ name                  │ intervals       │')
 	print('├───────────────────────┼─────────────────┤')
 	for name, pattern in constants.scales.items():
 		print(f'│ {name.ljust(21)} │ {get_pattern(pattern).rjust(15)} │')
 	print('└───────────────────────┴─────────────────┘')
-	#print(print_scales.__doc__)
+	print(print_scales.__doc__)
+
+print_scales()
