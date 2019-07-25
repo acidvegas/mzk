@@ -125,7 +125,15 @@ def print_intervals():
 	for interval, info in constants.intervals.items():
 		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(14), info['short_name'].ljust(5)))
 	print('└───────────┴────────────────┴───────┘')
-	print(print_intervals.__doc__)
+
+	print('C O M P O U N D   I N T E R V A L S'.center(42))
+	print('┌───────────┬────────────────────┬───────┐')
+	print('│ semitones │ quality            │ short │')
+	print('├───────────┼────────────────────┼───────┤')
+	for interval, info in constants.compound_intervals.items():
+		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(18), info['short_name'].ljust(5)))
+	print('└───────────┴────────────────────┴───────┘')
+	print(trim(print_intervals.__doc__))
 
 def print_scale(root, type, full=False):
 	frets = (24,147) if full else (12,75)
