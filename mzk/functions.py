@@ -156,5 +156,3 @@ def print_scales():
 		print(f'│ {name.ljust(21)} │ {get_pattern(pattern).rjust(15)} │')
 	print('└───────────────────────┴─────────────────┘')
 	print(print_scales.__doc__)
-
-print_scale('C','major')
