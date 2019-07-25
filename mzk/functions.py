@@ -87,6 +87,16 @@ def print_circle_of_fifths():
 	print(circle)
 	print(print_circle_of_fifths.__doc__)
 
+def help():
+	print('usage: python mzk.py [OPTIONS]')
+	print('\noptions:')
+	print('--chord=KEY_TYPE │ print a TYPE chord in the key of KEY')
+	print('--circle         │ print the circle of fifths')
+	print('--intervals      │ print list of intervals')
+	print('--scale=KEY_TYPE │ print a TYPE scale in the key of KEY')
+	print('--scales         │ print list of scale types & patterns')
+	print('\nnote: KEY_TYPE must be formatted as such: c_major, f#_mixolydian, etc.')
+
 def print_intervals():
 	'''definition:
 		the distance between two notes or pitches
@@ -108,13 +118,13 @@ def print_intervals():
 		perfect     - 4ths, 5ths, octaves
 		diminished  - minor/perfect - 1 semitone
 		augmented   - major/perfect + 1 semitone'''
-	print('            I N T E R V A L S           ')
-	print('┌───────────┬──────────────────┬───────┐')
-	print('│ semitones │ quality          │ short │')
-	print('├───────────┼──────────────────┼───────┤')
+	print('I N T E R V A L S'.center(38))
+	print('┌───────────┬────────────────┬───────┐')
+	print('│ semitones │ quality        │ short │')
+	print('├───────────┼────────────────┼───────┤')
 	for interval, info in constants.intervals.items():
-		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(16), info['short_name'].ljust(5)))
-	print('└───────────┴──────────────────┴───────┘')
+		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(14), info['short_name'].ljust(5)))
+	print('└───────────┴────────────────┴───────┘')
 	print(print_intervals.__doc__)
 
 def print_scale(root, type, full=False):
@@ -147,4 +157,4 @@ def print_scales():
 	print('└───────────────────────┴─────────────────┘')
 	print(print_scales.__doc__)
 
-print_scales()
+print_scale('C','major')
