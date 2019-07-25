@@ -34,6 +34,21 @@ colors = {
 	'reset' : '\033[0m'
 }
 
+compound_intervals = {
+	'minor_ninth'        : {'semitones':13, 'short_name':'m9'},
+	'major_ninth'        : {'semitones':14, 'short_name':'M9'},
+	'minor_tenth'        : {'semitones':15, 'short_name':'m10'},
+	'major_tenth'        : {'semitones':16, 'short_name':'M10'},
+	'perfect_eleventh'   : {'semitones':17, 'short_name':'P11'},
+	'augmented_eleventh' : {'semitones':18, 'short_name':'TT'},
+	'perfect_twelfth'    : {'semitones':19, 'short_name':'P12'},
+	'minor_thirteenth'   : {'semitones':20, 'short_name':'m13'},
+	'major_thirteenth'   : {'semitones':21, 'short_name':'M13'},
+	'minor_fourteenth'   : {'semitones':22, 'short_name':'m14'},
+	'major_fourteenth'   : {'semitones':23, 'short_name':'M14'},
+	'double_octave'      : {'semitones':25, 'short_name':'15ma'}
+}
+
 intervals = {
 	'perfect_unison' : {'semitones':0,  'short_name':'P1'},
 	'minor_second'   : {'semitones':1,  'short_name':'m2'},
@@ -47,7 +62,7 @@ intervals = {
 	'major_sixth'    : {'semitones':9,  'short_name':'M6'},
 	'minor_seventh'  : {'semitones':10, 'short_name':'m7'},
 	'major_seventh'  : {'semitones':11, 'short_name':'M7'},
-	'perfect_octave' : {'semitones':12, 'short_name':'P8'}
+	'perfect_octave' : {'semitones':12, 'short_name':'8va'}
 }
 
 notes         = ('A', 'A#', 'B',   'C',  'C#', 'D',  'D#',  'E',    'F',  'F#', 'G',  'G#')
