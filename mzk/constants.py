@@ -1,6 +1,24 @@
 #!/usr/bin/env python
-# mzk music theory helper - developed by acidvegas in python (https://acid.vegas/mzk)
+# mzk music theory helper - developed by acidvegas in python (https://git.acid.vegas/mzk)
 # constants.py
+
+chords = {
+	'major'              : {'symbol':'',      'pattern':'1 3 5'},
+	'minor'              : {'symbol':'m',     'pattern':'1 b3 5'},
+	'7th'                : {'symbol':'7',     'pattern':'1 3 5 b7'},
+	'minor_7th'          : {'symbol':'m7',    'pattern':'1 b3 5 b7'},
+	'major_7th'          : {'symbol':'maj7',  'pattern':'1 3 5 7'},
+	'minor_7th_flat_5th' : {'symbol':'m7b5',  'pattern':'1 b3 b5 b7'},
+	'suspended_4th'      : {'symbol':'sus4',  'pattern':'1 4 5'},
+	'diminished'         : {'symbol':'dim',   'pattern':'1 b3 b5'},
+	'augmented'          : {'symbol':'aug',   'pattern':'1 3 #5'},
+	'6th'                : {'symbol':'6',     'pattern':'1 3 5 6'},
+	'minor_6th'          : {'symbol':'m6',    'pattern':'1 b3 5 6'},
+	'minor_6th_add_9th'  : {'symbol':'6add9', 'pattern':'1 3 5 6 9'},
+	'9th'                : {'symbol':'9',     'pattern':'1 3 5 b7 9'},
+	'minor_9th'          : {'symbol':'m9',    'pattern':'1 b3 5 b7 9'},
+	'major_9th'          : {'symbol':'maj9',  'pattern':'1 3 5 7 9'}
+}
 
 circle = '''                        major
 
@@ -62,10 +80,10 @@ intervals = {
 	'major_sixth'    : {'semitones':9,  'short_name':'M6'},
 	'minor_seventh'  : {'semitones':10, 'short_name':'m7'},
 	'major_seventh'  : {'semitones':11, 'short_name':'M7'},
-	'perfect_octave' : {'semitones':12, 'short_name':'8va'}
+	'perfect_octave' : {'semitones':12, 'short_name':'P8'}
 }
 
-notes         = ('A', 'A#', 'B',   'C',  'C#', 'D',  'D#',  'E',    'F',  'F#', 'G',  'G#')
+notes         = ('A', 'A#', 'B',   'C',  'C#', 'D',  'D#',  'E',    'F',  'F#', 'G',  'G#') # Chromatic scale
 numerals      = ('I', 'II', 'III', 'IV', 'V',  'VI', 'VII', 'VIII', 'IX', 'X',  'XI', 'XII')
 scale_degrees = ('tonic','supertonic','mediant','subdominant','dominant''submediant','subtonic')
 
@@ -73,7 +91,6 @@ scales = {
 	'algerian'              :  '2131131',
 	'aeolian'               :  '2122122',
 	'blues'                 :   '321132',
-	'chromatic'             :  '1111111',
 	'dorian'                :  '2122212',
 	'half_whole_diminished' : '12121212',
 	'harmonic_minor'        :  '2122131',
