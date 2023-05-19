@@ -28,6 +28,20 @@ def get_pattern(pattern):
 		elif step == '3' : new_pattern.append('WH')
 	return ' '.join(new_pattern)
 
+def chord_notes(type, key):
+	notes = scale_notes(type, key)
+	pattern = constants.chords[type]['pattern']
+	_notes = [key,]
+	for step in pattern.split()[1:]: #1 b3 5
+		if len(step) == 2:
+			if step[:1] == 'b':
+				_notes.append(notes[int(step)-2])
+			elif step[:1] == '#':
+				_notes.append(notes[int(step)])
+		else:
+			_notes.append(notes[int(step)-1])
+	return _notes
+
 def scale_notes(type, key):
 	last = 0
 	all_notes = chromatic_scale(key)*2
@@ -146,13 +160,13 @@ def print_intervals():
 	print('└───────────┴────────────────────┴───────┘')
 	print(print_intervals.__doc__)
 
-def print_scale(root, type, full=False):
+def print_scale(root, type, full=False, chord=False):
 	frets = (24,147) if full else (12,75)
 	print(f'{root.upper()} {type.upper()} SCALE'.center(frets[1]))
 	print('  ┌' + '┬'.join('─'*5 for x in range(frets[0])) + '┐')
 	print('0 │' + '│'.join(str(x).center(5) for x in range(1,frets[0]+1)) + '│')
 	print('  ├' + '┼'.join('─'*5 for x in range(frets[0])) + '┤')
-	notes = scale_notes(type, root)
+	notes = chord_notes(type, root) if chord else scale_notes(type, root)
 	for string in ('eBGDAE'):
 		string_notes = generate_scale_string(string, notes, full)
 		print(string + ' │' + '│'.join(note.center(5, '-') for note in string_notes[1:]) + '│')
