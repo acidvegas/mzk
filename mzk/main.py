@@ -12,17 +12,18 @@ import functions
 if len(sys.argv) != 2:
 	functions.print_help()
 else:
-	if sys.argv[1].startswith('--chord='):
+	print(sys.argv[1])
+	if sys.argv[1] == '--chords':
+		functions.print_chords()
+	elif sys.argv[1].startswith('--chord='):
 		chord = sys.argv[1][8:]
 		key   = chord.split('_')[0].upper()
 		type  = chord[len(key)+1:].lower()
-		if key in constants.notes and type in constants.scales:
-			functions.print_chord(key, type)
+		if key in constants.notes and type in constants.chords:
+			functions.print_scale(key, type, chord=True)
 		else:
 			print('error: invalid key or chord type\n\n')
 			functions.print_help()
-	elif sys.argv[1] == '--chords':
-		functions.print_chords()
 	elif sys.argv[1] == '--circle':
 		functions.print_circle_of_fifths()
 	elif sys.argv[1] == '--intervals':

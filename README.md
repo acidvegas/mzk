@@ -1,9 +1,9 @@
 # mzk
 > music theory helper
 
-![](screens/circle.png)
-![](screens/intervals_scales.png)
-![](screens/scale.png)
+![](.screens/circle.png)
+![](.screens/intervals_scales.png)
+![](.screens/scale.png)
 
 ## Information
 This repository originally started off as a means of using Python to learn music theory, specifcally guitar theory, since the basis of musical sound can be described mathematically *(in acoustics)* and exhibits a remarkable array of number properties.
@@ -27,7 +27,7 @@ Using the root of C, we can apply the pattern of the major scale to the C chroma
 * Scale/chord ASCII coloring
 
 ## Mirrors
-- [acid.vegas](https://acid.vegas/mzk)
+- [acid.vegas](https://git.acid.vegas/mzk)
 - [GitHub](https://github.com/acidvegas/mzk)
 - [GitLab](https://gitlab.com/acidvegas/mzk)
 - [SuperNETs](https://git.supernets.org/acidvegas/mzk)
