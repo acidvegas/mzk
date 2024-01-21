@@ -42,6 +42,19 @@ def chord_notes(type, key):
 			_notes.append(notes[int(step)-1])
 	return _notes
 
+def print_scale(root, type, full=False, chord=False):
+	frets = (24,147) if full else (12,75)
+	print(f'{root.upper()} {type.upper()} SCALE'.center(frets[1]))
+	print('  ┌' + '┬'.join('─'*5 for x in range(frets[0])) + '┐')
+	print('0 │' + '│'.join(str(x).center(5) for x in range(1,frets[0]+1)) + '│')
+	print('  ├' + '┼'.join('─'*5 for x in range(frets[0])) + '┤')
+	notes = chord_notes(type, root) if chord else scale_notes(type, root)
+	for string in ('eBGDAE'):
+		string_notes = generate_scale_string(string, notes, full)
+		print(string + ' │' + '│'.join(note.center(5, '-') for note in string_notes[1:]) + '│')
+	print('  └' + '┴'.join('─'*5 for x in range(frets[0])) + '┘')
+	print((', '.join(notes) + ' / ' + get_pattern(constants.scales[type])).rjust(frets[1]))
+
 def scale_notes(type, key):
 	last = 0
 	all_notes = chromatic_scale(key)*2
@@ -159,19 +172,6 @@ def print_intervals():
 		print('│ {0} │ {1} │ {2} │'.format(str(info['semitones']).rjust(9), interval.ljust(18), info['short_name'].ljust(5)))
 	print('└───────────┴────────────────────┴───────┘')
 	print(print_intervals.__doc__)
-
-def print_scale(root, type, full=False, chord=False):
-	frets = (24,147) if full else (12,75)
-	print(f'{root.upper()} {type.upper()} SCALE'.center(frets[1]))
-	print('  ┌' + '┬'.join('─'*5 for x in range(frets[0])) + '┐')
-	print('0 │' + '│'.join(str(x).center(5) for x in range(1,frets[0]+1)) + '│')
-	print('  ├' + '┼'.join('─'*5 for x in range(frets[0])) + '┤')
-	notes = chord_notes(type, root) if chord else scale_notes(type, root)
-	for string in ('eBGDAE'):
-		string_notes = generate_scale_string(string, notes, full)
-		print(string + ' │' + '│'.join(note.center(5, '-') for note in string_notes[1:]) + '│')
-	print('  └' + '┴'.join('─'*5 for x in range(frets[0])) + '┘')
-	print((', '.join(notes) + ' / ' + get_pattern(constants.scales[type])).rjust(frets[1]))
 
 def print_scales():
 	'''definition:
