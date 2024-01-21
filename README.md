@@ -26,8 +26,6 @@ Using the root of C, we can apply the pattern of the major scale to the C chroma
 * Color support for windows
 * Scale/chord ASCII coloring
 
-## Mirrors
-- [acid.vegas](https://git.acid.vegas/mzk)
-- [GitHub](https://github.com/acidvegas/mzk)
-- [GitLab](https://gitlab.com/acidvegas/mzk)
-- [SuperNETs](https://git.supernets.org/acidvegas/mzk)
+___
+
+###### Mirrors for this repository: [acid.vegas](https://git.acid.vegas/mzk) • [SuperNETs](https://git.supernets.org/acidvegas/mzk) • [GitHub](https://github.com/acidvegas/mzk) • [GitLab](https://gitlab.com/acidvegas/mzk) • [Codeberg](https://codeberg.org/acidvegas/mzk)
